@@ -1,25 +1,17 @@
-# Takuya's curated list of the tech
+# Inkdrop Blog Template
 
-A curated list of the tech I use, built with Astro and Tailwind CSS
-
-https://uses.craftz.dog/
+A template for creating simple blogs using [live-export](https://github.com/inkdropapp/inkdrop-live-export).
 
 ## Tutorial
 
 Watch how I built this website on YouTube:
-
-[![tutorial thumbnail](./docs/tutorial-thumb.jpg)](https://youtu.be/3_JE76PKBWE)
-
-<https://youtu.be/3_JE76PKBWE>
 
 ## Stack
 
 - [Astro](https://astro.build/) - Static Website Framework
 - [Tailwind CSS](https://tailwindui.com/) - CSS Framework
 - [React](https://reactjs.org/) - Component-based UI framework for JS
-- [Headless UI](https://headlessui.com/) - Unstyled interactive components
 - [React Icons](https://react-icons.github.io/react-icons/) - Icon set
-- [Inkdrop](https://www.inkdrop.app/) - Markdown note-taking app, for writing the blog content (optional)
 
 ## Project Structure
 
@@ -34,15 +26,23 @@ PROJECT_ROOT
 │   │   └── icons
 │   ├── layouts         # page layouts
 │   ├── pages           # page files
-│   │   ├── categories  # category pages
+│   │   ├── tags        # tags pages
 │   │   └── posts       # .md files
 │   └── styles          # global stylesheets
 └── tools               # Inkdrop integration
 ```
 
-## How to import notes from your Inkdrop local server
+## How to use it
 
-First, please check out the [live-export](https://github.com/inkdropapp/inkdrop-live-export) documentation.
+First off, clone this repository:
+
+```sh
+git clone git@github.com:inkdropapp/inkdrop-blog-template.git ./your-blog
+```
+
+### Import notes from your Inkdrop local server
+
+Please check out the [live-export](https://github.com/inkdropapp/inkdrop-live-export) documentation.
 
 Create `.env` file as following:
 
