@@ -1,0 +1,28 @@
+---
+import HeaderLink from './HeaderLink.astro'
+import { SITE_TITLE, HOMEPAGE_URL } from '../config'
+import { IoLogoGithub } from 'react-icons/io5/index.js'
+import FootprintIcon from './icons/footprint'
+import ThemeToggle from './ThemeToggleButton'
+---
+
+<header
+  class="fixed w-full p-2 z-20 bg-slate-100 dark:bg-zinc-900 transition-colors"
+>
+  <div class="mx-auto max-w-3xl">
+    <nav class="flex items-center gap-3 text-base">
+      <a href="/" class="group">
+        <h2 class="font-semibold tracking-tighter p-2 font-mplus text-lg">
+          <img class="w-8 inline-block" src="/inkdrop-logo.svg" />
+          {SITE_TITLE}
+        </h2>
+      </a>
+      <div class="items-center gap-6 flex">
+        <HeaderLink href={HOMEPAGE_URL}>About</HeaderLink>
+        <HeaderLink href="/tags">Tags</HeaderLink>
+      </div>
+      <div class="flex-1"></div>
+      <ThemeToggle client:visible />
+    </nav>
+  </div>
+</header>

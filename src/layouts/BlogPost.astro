@@ -1,0 +1,82 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+
+export interface Props {
+  content: {
+    title: string
+    description: string
+    createdAt: string
+    updatedAt: string
+    heroImage?: string
+    tags: string[]
+  }
+}
+
+const {
+  content: { title, description, heroImage, createdAt }
+} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <Body>
+    <Header />
+    <main class="pt-[64px]">
+      <Content className="markdown-content">
+        <div class="mb-8">
+          {
+            heroImage && (
+              <img
+                class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                width={720}
+                height={360}
+                src={heroImage}
+                alt=""
+              />
+            )
+          }
+        </div>
+        <div class="opacity-50 text-sm flex items-center gap-3">
+          <span
+            class="inline-block h-4 w-0.5 rounded-full bg-zinc-400 dark:bg-zinc-500"
+          ></span>
+          {
+            new Intl.DateTimeFormat('en-US', {
+              dateStyle: 'long'
+            }).format(new Date(createdAt))
+          }
+        </div>
+        <h1 class="text-3xl my-1 font-mplus">{title}</h1>
+        <hr class="border-top border-zinc-400 my-4" />
+        <slot />
+        <span class="hidden">
+          <!-- Utility classes for Markdown body -->
+          <span
+            class="text-2xl mb-6 border-slate-200 dark:border-zinc-700/50 rounded-lg px-2 py-1 list-disc"
+          ></span>
+          <a
+            class="underline underline-offset-2 text-indigo-600 dark:text-indigo-400 decoration-indigo-400 dark:decoration-indigo-600"
+          ></a>
+          <span
+            class="text-4xl my-2 list-decimal list-outside p-4 pl-8 table-auto"
+          ></span>
+          <span
+            class="border-b font-bold p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left border-slate-400 dark:border-zinc-500"
+          ></span>
+          <span
+            class="px-4 my-4 border-l-4 border-l-slate-200 dark:border-l-zinc-500 italic"
+          ></span>
+        </span>
+      </Content>
+    </main>
+    <Footer />
+  </Body>
+</html>
