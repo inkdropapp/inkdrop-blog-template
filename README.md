@@ -4,7 +4,7 @@ A template for creating simple blogs using [live-export](https://github.com/inkd
 
 ## Tutorial
 
-Watch how I built this website on YouTube:
+Coming soon
 
 ## Stack
 
