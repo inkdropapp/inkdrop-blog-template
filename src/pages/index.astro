@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
-import { IoArrowForward } from 'react-icons/io5/index.js'
-import { Image } from '@astrojs/image/components'
+import { IoArrowForward } from 'react-icons/io5'
+import { Image } from 'astro:assets'
 
 const posts = (await Astro.glob('./posts/*.md')).sort(
   (a: any, b: any) =>
@@ -44,8 +44,8 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
                       <Image
                         class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                         src={post.frontmatter.heroImage}
-                        width={720 * 2}
-                        aspectRatio={2.0}
+                        width={720}
+                        height={720/1.777}
                         alt="Thumbnail"
                       />
                     )}
