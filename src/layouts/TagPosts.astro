@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import BaseHead from '../components/BaseHead.astro'
 import Body from '../components/Body.astro'
 import Breadcrumb from '../components/Breadcrumb.astro'
@@ -43,8 +43,8 @@ const posts = (await Astro.glob('../pages/posts/*.md'))
                       <Image
                         class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                         src={post.frontmatter.heroImage}
-                        width={720 * 2}
-                        aspectRatio={2.0}
+                        width={720}
+                        height={720 / 1.777}
                         alt="Thumbnail"
                       />
                     )}
