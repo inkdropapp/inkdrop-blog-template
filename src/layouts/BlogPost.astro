@@ -29,6 +29,55 @@ const {
 
   <Body>
     <Header />
+    <style global>
+    main article.markdown-content {
+      h1, h2, h3, h4, h5 {
+        @apply font-bold font-mplus my-2
+      }
+      h1 {
+        @apply text-4xl
+      }
+      h2 {
+        @apply text-2xl
+      }
+      h3 {
+        @apply text-xl
+      }
+      h4 {
+        @apply text-lg
+      }
+      img {
+        @apply border border-slate-300 dark:border-zinc-700 rounded-xl mb-6
+      }
+      p {
+        @apply mb-6
+      }
+      a {
+        @apply underline underline-offset-2 text-indigo-600 dark:text-indigo-400 decoration-indigo-400 dark:decoration-indigo-600
+      }
+      table {
+        @apply table-auto border border-slate-200 dark:border-zinc-700 rounded-lg
+      }
+      th {
+        @apply border dark:border-zinc-700 font-bold p-4 pb-3 text-left
+      }
+      td {
+        @apply border border-slate-200 dark:border-zinc-700 p-4
+      }
+      hr {
+        @apply border-slate-200 dark:border-zinc-500 my-4
+      }
+      blockquote {
+        @apply px-4 my-4 border-l-4 border-l-slate-200 dark:border-l-zinc-500 italic
+      }
+      ul {
+        @apply list-disc list-outside pl-4 mb-4
+      }
+      ol {
+        @apply list-decimal list-outside pl-4 mb-4
+      }
+    }
+    </style>
     <main class="pt-[64px]">
       <Content className="markdown-content">
         <div class="mb-8">
@@ -57,24 +106,6 @@ const {
         <h1 class="text-3xl my-1 font-mplus">{title}</h1>
         <hr class="border-top border-zinc-400 my-4" />
         <slot />
-        <span class="hidden">
-          <!-- Utility classes for Markdown body -->
-          <span
-            class="text-2xl mb-6 border-slate-200 dark:border-zinc-700/50 rounded-lg px-2 py-1 list-disc"
-          ></span>
-          <a
-            class="underline underline-offset-2 text-indigo-600 dark:text-indigo-400 decoration-indigo-400 dark:decoration-indigo-600"
-          ></a>
-          <span
-            class="text-4xl my-2 list-decimal list-outside p-4 pl-8 table-auto"
-          ></span>
-          <span
-            class="border-b font-bold p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left border-slate-400 dark:border-zinc-500"
-          ></span>
-          <span
-            class="px-4 my-4 border-l-4 border-l-slate-200 dark:border-l-zinc-500 italic"
-          ></span>
-        </span>
       </Content>
     </main>
     <Footer />
